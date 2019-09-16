@@ -1,15 +1,29 @@
 import React from "react";
-import { Tab, Menu, Icon } from "semantic-ui-react";
+import styled from 'styled-components';
 import { NavLink } from "react-router-dom";
 
-// TODO: Add missing menu/tabs/nav below
-
-// Review Semantic UI Component options for nav-like UI:
-// https://react.semantic-ui.com/collections/menu/
-// https://react.semantic-ui.com/modules/tab/
-// https://react.semantic-ui.com/elements/button/
-// https://react.semantic-ui.com/collections/breadcrumb/
+const NavBar = styled.div `
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+`
+const Nav = styled(NavLink)`
+    font-size: 1.5rem;
+    color:black;
+    text-decoration: none;    
+`
 
 export default function TabNav() {
 
+    return(
+    <NavBar>
+        <Nav exact to={`/`}>Home</Nav>
+        <Nav to={`/characters`}>Character</Nav>
+        <Nav to={`/locations`}>Location</Nav>
+        <Nav to={`/episodes`}>Episodes</Nav>
+    </NavBar>
+    )
 };
